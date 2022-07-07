@@ -2,8 +2,13 @@ import plotly.express as px
 import pandas as pd
 from dash import Dash, html, dcc
 import dash_bootstrap_components as dbc
+from dir import DirOpt
 
-tab_geo = pd.read_csv("/Users/esanto/PycharmProjects/DashTutorial/observatorio_turismo/data/tab_geo.csv")
+dir_opt = DirOpt()
+base_dir = dir_opt.get_base_data()
+
+
+tab_geo = pd.read_csv(f"{base_dir}/tab_geo.csv")
 px.set_mapbox_access_token("pk.eyJ1Ijoia2FyZW5yb2phcyIsImEiOiJja25tMmw3OWQwbXl6MnBvNTdjam5xdW9jIn0.GkuAPjGFBNUEvZcZ8_-uTw")
 fig_map_box = px.scatter_mapbox(tab_geo,
                         lat="LATITUD_Y",
