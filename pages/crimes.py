@@ -8,6 +8,7 @@ from components.crimes.time_day import TimeDay
 from components.crimes.gender_victims import GenderVictims
 from components.crimes.per_nationality import CrimeNationality
 from components.crimes.per_neighbourhood import Neighbourhood
+from components.crimes.gender_victims_per_age import GenderVictimsAge
 from components.crimes.per_hour import Hour
 from components.crimes import filters as migrate_filters
 from components.crimes import datatable
@@ -18,6 +19,7 @@ age_victim = AgeVictim('Age Victims', 'id_age_victim')
 time_day = TimeDay('Time day', 'id_time_day')
 gender_victims = GenderVictims('Gender Victims', 'id_gender_victims')
 per_neighbourhood = Neighbourhood('Neighbourhood', 'id_neighbourhood')
+gender_victims_per_age = GenderVictimsAge('GenderVictimsAge', 'id_gender_victims_per_age')
 per_hour = Hour('Hour', 'id_hour')
 per_nationality = CrimeNationality('Nationality', 'id_nationality')
 
@@ -30,7 +32,7 @@ crimes = html.Div([
                 dbc.Col([
                     dbc.Row(
                         [
-                            migrate_filters.filters,
+                            gender_victims_per_age.display(),
                         ],
                     ),
                     dbc.Row(
@@ -41,26 +43,26 @@ crimes = html.Div([
                 ],
                     width={"size": 3, "order": 1}),
                 dbc.Col([
-                    dbc.Row(
-                        [
-                            dbc.Col(
-                                crime_indicators.card_indicators,
-                                width={"size": 3, "order": 5},
-                            ),
-                            dbc.Col(
-                                crime_indicators.card_indicators,
-                                width={"size": 3, "order": 5},
-                            ),
-                            dbc.Col(
-                                crime_indicators.card_indicators,
-                                width={"size": 3, "order": 5},
-                            ),
-                            dbc.Col(
-                                crime_indicators.card_indicators,
-                                width={"size": 2, "order": 5},
-                            ),
-                        ],
-                    ),
+                    # dbc.Row(
+                    #     [
+                    #         dbc.Col(
+                    #             crime_indicators.card_indicators,
+                    #             width={"size": 3, "order": 5},
+                    #         ),
+                    #         dbc.Col(
+                    #             crime_indicators.card_indicators,
+                    #             width={"size": 3, "order": 5},
+                    #         ),
+                    #         dbc.Col(
+                    #             crime_indicators.card_indicators,
+                    #             width={"size": 3, "order": 5},
+                    #         ),
+                    #         dbc.Col(
+                    #             crime_indicators.card_indicators,
+                    #             width={"size": 2, "order": 5},
+                    #         ),
+                    #     ],
+                    # ),
                     dbc.Row(
                         [
                             dbc.Col(

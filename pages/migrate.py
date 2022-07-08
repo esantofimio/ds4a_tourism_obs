@@ -6,13 +6,18 @@ from lib.crimes import crimes_city, indicators as crime_indicators, filters as c
 from components.migrate.travel_reason import TravelReason
 from components.migrate.travel_reason_month import TravelReasonMonth
 from components.migrate.tourist_region import TouristRegion
-from components.migrate import filters as migrate_filters
+from components.migrate.age_tourism import AgeTourism
+from components.migrate.year_age import YearAge
+from components.migrate import datatable
+
 
 
 
 travel_reason = TravelReason('Travel Reason', 'id_travel_reason')
+year_age = YearAge('Age Tourism', 'id_year_age')
 travel_reason_month = TravelReasonMonth('Travel Reason Month', 'id_travel_reason_month')
 tourist_region = TouristRegion('Tourist Region', 'id_tourist_region')
+age_tourism = AgeTourism('Age Tourism', 'id_age_tourism')
 
 migrate = html.Div([
     dbc.Row([
@@ -23,37 +28,32 @@ migrate = html.Div([
                 dbc.Col([
                     dbc.Row(
                         [
-                            migrate_filters.filters,
-                        ],
-                    ),
-                    dbc.Row(
-                        [
                             tourist_region.display(),
                         ]
                     ),
                 ],
                     width={"size": 3, "order": 1}),
                 dbc.Col([
-                    dbc.Row(
-                        [
-                            dbc.Col(
-                                crime_indicators.card_indicators,
-                                width={"size": 3, "order": 5},
-                            ),
-                            dbc.Col(
-                                crime_indicators.card_indicators,
-                                width={"size": 3, "order": 5},
-                            ),
-                            dbc.Col(
-                                crime_indicators.card_indicators,
-                                width={"size": 3, "order": 5},
-                            ),
-                            dbc.Col(
-                                crime_indicators.card_indicators,
-                                width={"size": 2, "order": 5},
-                            ),
-                        ],
-                    ),
+                    # dbc.Row(
+                    #     [
+                    #         dbc.Col(
+                    #             crime_indicators.card_indicators,
+                    #             width={"size": 3, "order": 5},
+                    #         ),
+                    #         dbc.Col(
+                    #             crime_indicators.card_indicators,
+                    #             width={"size": 3, "order": 5},
+                    #         ),
+                    #         dbc.Col(
+                    #             crime_indicators.card_indicators,
+                    #             width={"size": 3, "order": 5},
+                    #         ),
+                    #         dbc.Col(
+                    #             crime_indicators.card_indicators,
+                    #             width={"size": 2, "order": 5},
+                    #         ),
+                    #     ],
+                    # ),
                     dbc.Row(
                         [
                             dbc.Col([
@@ -73,7 +73,11 @@ migrate = html.Div([
                         [
                             dbc.Col(
                                 travel_reason.display(),
-                                width={"size": 11, "order": 5},
+                                width={"size": 6, "order": 5},
+                            ),
+                            dbc.Col(
+                                age_tourism.display(),
+                                width={"size": 5, "order": 5},
                             ),
 
                         ]
@@ -90,7 +94,7 @@ migrate = html.Div([
                     dbc.Row(
                         [
                             dbc.Col(
-                                datatable_crimes.crimes_table,
+                                datatable.migration_table,
                                 width={"size": 11, "order": 5},
                             ),
                         ]

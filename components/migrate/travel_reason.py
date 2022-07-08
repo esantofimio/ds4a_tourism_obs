@@ -43,7 +43,7 @@ class TravelReason:
         fig = px.bar(df_graph, x='Reason for trip', y='Number of travelers',\
                      text_auto='.2s', animation_frame='Year', range_y=[0, df_graph['Number of travelers'].max()],\
                      color='Reason for trip', color_discrete_sequence=px.colors.qualitative.Bold,
-                     width=1200, height=300)
+                     width=650, height=300)
 
         fig.update_layout(font_family="Century Gothic",
                           paper_bgcolor='rgb(255, 255, 255)',

@@ -7,6 +7,7 @@ from components.hosting.hosting_zones import HostingZones
 from components.hosting.gastro_zones import GastroZones
 from components.hosting.touristic_atractions import TouristicAtractions
 from components.hosting.hosting_per_sector import HostingPerSecond
+
 from components.hosting import datatable
 
 
@@ -25,26 +26,6 @@ hosting = html.Div([
                     dbc.Row(
                         [
                             dbc.Col(
-                                crime_indicators.card_indicators,
-                                width={"size": 3, "order": 5},
-                            ),
-                            dbc.Col(
-                                crime_indicators.card_indicators,
-                                width={"size": 3, "order": 5},
-                            ),
-                            dbc.Col(
-                                crime_indicators.card_indicators,
-                                width={"size": 3, "order": 5},
-                            ),
-                            dbc.Col(
-                                crime_indicators.card_indicators,
-                                width={"size": 3, "order": 5},
-                            ),
-                        ],
-                    ),
-                    dbc.Row(
-                        [
-                            dbc.Col(
                                 dbc.Row(
                                     [
                                         hosting_zones.display()
@@ -59,13 +40,13 @@ hosting = html.Div([
                                         hosting_per_sector.display()
                                     ])
                             ],
-                                width={"size": 6, "order": 5}
+                                width={"size": 5, "order": 5}
                             )
                         ]
                     ),
                 ],
                     width={"size": 12, "order": 2},
-                    #style={'margin-left': '2px'}
+                    style={'margin-left': '2px'}
                 ),
             ]),
         ]),

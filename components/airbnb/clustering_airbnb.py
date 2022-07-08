@@ -24,7 +24,10 @@ class ClusteringAirbnb:
         Airbnb_clean['labels'] = labels
         Airbnb_clean['labels'] = Airbnb_clean['labels'].astype("category")
         labels = kmeans.predict(X)
-        fig = px.scatter(Airbnb_clean, x="Latitude", y="Longitude", color=labels)
+        fig = px.scatter(Airbnb_clean, x="Latitude", y="Longitude", color=labels, width=800)
+        fig.update_layout(font_family="Century Gothic",
+                          paper_bgcolor='rgb(255, 255, 255)',
+                          plot_bgcolor='rgb(255, 255, 255)')
         return fig
 
     def display(self):
