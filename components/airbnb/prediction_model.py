@@ -123,7 +123,7 @@ class PredictionModel:
             children=[
                 dbc.CardBody(
                     [
-                        html.H6("Change the value in the text box to see callbacks in action!"),
+                        html.H6("Predict airbnb price"),
                         html.Div([
                             dcc.Input(
                                 id="input_{}".format(_), type='text',

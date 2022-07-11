@@ -17,12 +17,6 @@ navbar = html.Div(
                 dbc.Collapse(
                     dbc.Nav(
                         [
-                            dbc.NavItem(dcc.Link('Home',
-                                                 href='/index_page',
-                                                 style={'color': 'rgb(31, 120, 180)',
-                                                        'text-decoration': 'none',
-                                                        'margin-left': '5px'}
-                                                 )),
                             dbc.NavItem(dcc.Link('Migrate',
                                                  href='/migrate_page',
                                                  style={'color': 'rgb(31, 120, 180)',
@@ -43,12 +37,6 @@ navbar = html.Div(
                                                  )),
                             dbc.NavItem(dcc.Link('Price Airbnb',
                                                  href='/pricing_airbnb',
-                                                 style={'color': 'rgb(31, 120, 180)',
-                                                        'text-decoration': 'none',
-                                                        'margin-left': '8px'}
-                                                 )),
-                            dbc.NavItem(dcc.Link('Bases',
-                                                 href='/bases_page',
                                                  style={'color': 'rgb(31, 120, 180)',
                                                         'text-decoration': 'none',
                                                         'margin-left': '8px'}

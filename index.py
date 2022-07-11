@@ -6,16 +6,16 @@ from pages.crimes import crimes
 from pages.hosting import hosting
 from pages.pricing_airbnb import pricing_airbnb
 from pages.bases import bases
-import flask
+from flask import Flask
+
 
 ###########################################################
 #
 #           APP LAYOUT:
 #
 ###########################################################
-server = flask.Flask(__name__)
-
-app = Dash(__name__, external_stylesheets=[dbc.themes.YETI], server=server,  suppress_callback_exceptions=True)
+server = Flask(__name__)
+app = Dash(__name__, external_stylesheets=[dbc.themes.YETI], server=server, suppress_callback_exceptions=True)
 
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
@@ -78,8 +78,9 @@ def display_page(pathname):
     elif pathname == '/bases_page':
         return bases_page
     else:
-        return index_page
+        return crimes_page
     # You could also return a 404 "URL not found" page here
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server()
+

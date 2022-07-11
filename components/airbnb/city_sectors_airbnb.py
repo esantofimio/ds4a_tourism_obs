@@ -19,6 +19,9 @@ class CitySectorsAirbnb:
     @staticmethod
     def fig_sectors_airbnb():
         fig = px.scatter(Airbnb_clean, x="Latitude", y="Longitude", color="Localidad")
+        fig.update_layout(font_family="Century Gothic",
+                          paper_bgcolor='rgb(255, 255, 255)',
+                          plot_bgcolor='rgb(255, 255, 255)')
         return fig
 
     def display(self):

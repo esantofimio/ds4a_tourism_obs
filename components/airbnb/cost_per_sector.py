@@ -32,7 +32,7 @@ class CostPerSector:
                      range_y=[Airbnb_clean['ADR_USD_trans'].min(),
                               Airbnb_clean['ADR_USD_trans'].max() + 0.5], \
                      color_discrete_sequence=['salmon'],
-                     width=800, height=400)
+                     width=750, height=400)
 
         fig.update_layout(font_family="Century Gothic",
                           paper_bgcolor='rgb(255, 255, 255)',
